@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/jquery.mobile-1.4.2.js"></script>
+    <script src="js/screen.js"></script>
+    
+    <head>
+        <title> Flight Instructor Mobile </title> 
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    </head>
+
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1> Flight Instructor Mobile </h1>
+            <div data-role="navbar" data-theme="e" data-iconpos="top">
+                <ul>
+                    <li><a id="n" onclick = "init_screen('n');" data-icon="star" class="ui-btn-active ui-state-persist">New Student Entry</a></li>
+					<li><a id="l" onclick = "init_screen('l');" data-icon="search" >Student Lookup</a></li>	
+                    <li><a id="m" onclick = "init_screen('m');" data-icon="gear" >Modify Event List</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /header -->
+
+        <span id = "l_footer" data-role="footer" data-position="fixed">
+            <label for="query">Search for Name:</label>
+            <input type="search" name="Search Name" id="query" value="" data-mini="true" />	
+            <input type="button" value="Search" data-icon="search"/>
+            <input type="button" value="Reset"  data-icon="back"/>
+        </span><!-- /l-footer -->
+
+        <span id = "m_footer" data-role="footer" data-position="fixed">
+            <input type="button" value="Save" data-icon="check"/>
+            <input type="button" value="Add Event"  data-icon="plus"/>
+            <input type="button" value="Add Sub-Event"  data-icon="arrow-d"/>
+            <input type="button" value="Delete Event"  data-icon="minus"/>
+        </span><!-- /m-footer -->
+
+        <span id = "n_footer" data-role="footer" data-position="fixed">
+            <input type="button" value="Submit" data-icon="check"/>
+            <input type="button" value="Reset"  data-icon="back"/>
+            <input type="button" value="Add Event"  data-icon="plus"/>
+            <input type="button" value="Delete Event"  data-icon="minus"/>
+        </span><!-- /n-footer -->
+    </div><!-- /page -->
+
+    <script>
+        init_screen ('n');
+    </script>
+</html>
