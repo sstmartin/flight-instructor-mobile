@@ -6,7 +6,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script src="js/jquery.mobile-1.4.2.js"></script>
     <script src="js/screen.js"></script>
-    
+
     <head>
         <title> Flight Instructor Mobile </title> 
         <meta name="format-detection" content="telephone=no" />
@@ -20,11 +20,32 @@
             <div data-role="navbar" data-theme="e" data-iconpos="top">
                 <ul>
                     <li><a id="n" onclick = "init_screen('n');" data-icon="star" class="ui-btn-active ui-state-persist">New Student Entry</a></li>
-					<li><a id="l" onclick = "init_screen('l');" data-icon="search" >Student Lookup</a></li>	
+                    <li><a id="l" onclick = "init_screen('l');" data-icon="search" >Student Lookup</a></li>	
                     <li><a id="m" onclick = "init_screen('m');" data-icon="gear" >Modify Event List</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- /header -->
+
+        <table data-role="table" id="my-table" data-mode="columntoggle">
+            <thead>
+                <tr>
+                    <th>Event Number</th>
+                    <th>Event Name</th>
+                    <th>Event Description</th>
+                    <th>Parent Event</th>
+                    <th>Remove <th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
 
         <span id = "l_footer" data-role="footer" data-position="fixed">
             <label for="query">Search for Name:</label>
@@ -49,6 +70,6 @@
     </div><!-- /page -->
 
     <script>
-        init_screen ('n');
+                        init_screen('n');
     </script>
 </html>
