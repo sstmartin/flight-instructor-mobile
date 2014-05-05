@@ -28,48 +28,53 @@
         
         <div id="m_main">
             
-            <table data-role="table" id="m-table" data-mode="flow">
-            <thead>
-                <tr>
-                    <th>Event Number</th>
-                    <th>Event Name</th>
-                    <th>Event Description</th>
-                    <th>Parent Event</th>
-                    <th>Remove <th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                </tr>
-            </tbody>
-        </table>
+            <table data-role="table" id="m_add_table" data-mode="flow">
+                
+            </table>
+            
+            <table data-role="table" id="m_entry_table" data-mode="flow">
+                <thead>
+                    <tr>
+                        <th>Event Number</th>
+                        <th>Event Name</th>
+                        <th>Event Description</th>
+                        <th>Parent Event</th>
+                        <th>Remove <th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+            
         </div>
         
-        <span id = "l_footer" data-role="footer" data-position="fixed">
-            <label for="query">Search for Name:</label>
-            <input type="search" name="Search Name" id="query" value="" data-mini="true" />	
-            <input type="button" value="Search" data-icon="search"/>
-            <input type="button" value="Reset"  data-icon="back"/>
-        </span><!-- /l-footer -->
-
-        <span id = "m_footer" data-role="footer" data-position="fixed">
-            <input type="button" value="Save" data-icon="check"/>
-            <input type="button" id="m-add" value="Add Event"  data-icon="plus"/>
-            <input type="button" value="Add Sub-Event"  data-icon="arrow-d"/>
-            <input type="button" value="Delete Event"  data-icon="minus"/>
-        </span><!-- /m-footer -->
-
-        <span id = "n_footer" data-role="footer" data-position="fixed">
+        
+        <div id = "n_footer" data-role="footer" data-position="fixed">
             <input type="button" value="Submit" data-icon="check"/>
             <input type="button" value="Reset"  data-icon="back"/>
             <input type="button" value="Add Event"  data-icon="plus"/>
             <input type="button" value="Delete Event"  data-icon="minus"/>
-        </span><!-- /n-footer -->
+        </div><!-- /n-footer -->
+        
+        <div id = "l_footer" data-role="footer" data-position="fixed">
+            <label for="query">Search for Name:</label>
+            <input type="search" name="Search Name" id="query" value="" data-mini="true" />	
+            <input type="button" value="Search" data-icon="search"/>
+            <input type="button" value="Reset"  data-icon="back"/>
+        </div><!-- /l-footer -->
+
+        <div id = "m_footer" data-role="footer" data-position="fixed">
+            <input type="button" id="m-add" value="Add Event"  data-icon="plus"/>
+            <input type="button" value="Delete Event(s)"  data-icon="minus"/>
+        </div><!-- /m-footer -->
     </div><!-- /page -->
 
     <script>
