@@ -1,13 +1,13 @@
 //Add a new event to the EVENTS database
-function add_event(event, description, parent) {
+function add_event(event, parent) {
     //Open
     var db = openDatabase('flight_instructor_mobile', '1.0', 'Data Storage', 2 * 1024 * 1024);
     //Write
     db.transaction(function(tx) {
         //First time condition
-        tx.executeSql('CREATE TABLE IF NOT EXISTS EVENTS (event unique, description, parent)');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS EVENTS (event unique, parent)');
         //Insert data
-        tx.executeSql('INSERT INTO EVENTS (event, description, parent) VALUES ("' + event + '", "' + description + '", "' + parent + '")');
+        tx.executeSql('INSERT INTO EVENTS (event, parent) VALUES ("' + event + '", "' + parent + '")');
     });
 }
 
@@ -36,7 +36,7 @@ function events(query, callback){
     db.transaction(function (tx) {
       tx.executeSql(query, [], function(tx, results){
          for(var i=0; i<results.rows.length; i++) {
-             current_events[i] = [results.rows.item(i).event,results.rows.item(i).description, results.rows.item(i).parent];
+             current_events[i] = [results.rows.item(i).event, results.rows.item(i).parent];
          }
          callback(current_events);
       });
