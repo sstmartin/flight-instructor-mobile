@@ -5,12 +5,16 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
-        <link rel="stylesheet" type="textcss" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
 
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.mobile-1.4.2.js"></script>
         <script src="js/script.js"></script>
         <script src="js/screen.js"></script>
+        <script src="js/database.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" /> 
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog2.min.js"></script>
     </head>
 
     <div data-role="page">
@@ -27,6 +31,9 @@
 
         <div id="m_main">
 
+            <br><br>
+            <div id="title">New Event Adder</div>
+            
             <table data-role="table" id="m_add_table" data-mode="flow">
                 <thead>
                     <tr>
@@ -36,38 +43,49 @@
                     </tr>
                     
                     <tr>
-                        <th><input type="text" id="m_add_name"></th>
-                        <th><input type="text" id="m_add_description"></th>
-                        <th>
-                                <select name="select-choice-1" id="select-choice-1">
-                                    <option>GET FROM DATABASE</option>
-                                </select>
-                        </th>
+                        <td><input type="text" id="m_add_name"></td>
+                        <td><input type="text" id="m_add_description"></td>
+                        <td>
+                            <select name="select-choice-1" id="select-choice-1">
+                                <option>No Parent</option>
+                            </select>
+                        </td>
                     </tr>
                 </thead>
             </table>
 
+            <br><br>
+            <div id="title">Current Events Used</div>
+            
             <table data-role="table" id="m_entry_table" data-mode="flow">
                 <thead>
                     <tr>
-                        <th>Event Number</th>
                         <th>Event Name</th>
                         <th>Event Description</th>
                         <th>Parent Event</th>
-                        <th>Remove <th>
+                        <th>Modify</th>
                     </tr>
                 </thead>
-
+                
                 <tbody>
                     <tr>
-                        <td>1</td>
                         <td>2</td>
                         <td>3</td>
                         <td>4</td>
                         <td>
-                            <input type="checkbox" name="checkbox-1" id="checkbox-0" class="custom" />
-                        <td>
+                            <label><input type="checkbox" name="checkbox-0" />Select Event</label>
+                        </td>
                     </tr>
+                    
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>
+                            <label><input type="checkbox" name="checkbox-0" />Select Event</label>
+                        </td>
+                    </tr>
+
                 </tbody>
             </table>
 
@@ -90,7 +108,7 @@
 
         <div id = "m_footer" data-role="footer" data-position="fixed">
             <input type="button" id="m-add" value="Add Event"  data-icon="plus"/>
-            <input type="button" value="Delete Event(s)"  data-icon="minus"/>
+            <input type="button" id="m-delete" value="Delete Event(s)"  data-icon="minus"/>
         </div><!-- /m-footer -->
     </div><!-- /page -->
 

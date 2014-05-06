@@ -1,5 +1,24 @@
 
-INPUT#text {
-    height: 30px;
+table#m_add_table, table#m_entry_table {
+    table-layout: fixed;
 }
+
+#m_add_name, #m_add_description {
+    height:30pt;
+}
+
+.ui-table th {
+    text-align: center;
+}
+
+.ui-table td {
+    border-top:3pt solid #e5eff8;
+    text-align: center;
+}
+
+#title {
+    font-size: 200%;
+    text-align: center;
+}
+
 
