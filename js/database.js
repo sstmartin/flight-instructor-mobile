@@ -35,11 +35,15 @@ function select_events() {
                 output[i] = [results.rows.item(i).event,results.rows.item(i).description, results.rows.item(i).parent];
                 //window.alert(output[i]);
             }
+<<<<<<< HEAD
 <<<<<<< HEAD:database.js
             return (output);
 =======
             window.alert(output);
 >>>>>>> 390c56fcdf659b3da0ca0cc262b769da14721c5a:js/database.js
+=======
+            window.alert(output);
+>>>>>>> 390c56fcdf659b3da0ca0cc262b769da14721c5a
         }, null);
     });
 }
