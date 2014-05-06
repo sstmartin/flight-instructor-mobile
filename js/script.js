@@ -5,8 +5,8 @@ $(document).ready(function(){
     
     //Refreshes the Event List Frame
     function update_event_list() {
-        $event = select_events();
-        //alert($event);
+        $events = select_events();
+        alert($events);
     }
     
     //When You Click Add
