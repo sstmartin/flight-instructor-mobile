@@ -16,4 +16,9 @@ table#m_add_table, table#m_entry_table {
     text-align: center;
 }
 
+#title {
+    font-size: 200%;
+    text-align: center;
+}
+
 

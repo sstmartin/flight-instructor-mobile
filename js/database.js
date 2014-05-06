@@ -35,7 +35,7 @@ function select_events() {
                 output[i] = [results.rows.item(i).event,results.rows.item(i).description, results.rows.item(i).parent];
                 //window.alert(output[i]);
             }
+            window.alert(output);
         }, null);
     });
-    return (output)
 }

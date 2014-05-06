@@ -1,20 +1,27 @@
 $(document).ready(function(){
     
-    $("#m-add").click(function() {
-        $("#m-table tbody").append("<tr><th>TEST</th></tr>");
-    });
+    //Function calls to initialize data
+    update_event_list();
     
-    $("#m_toggle_delete").click(function() {
-        //Add to list of what to delete
+    //Refreshes the Event List Frame
+    function update_event_list() {
+        $event = select_events();
+        //alert($event);
+    }
+    
+    //When You Click Add
+    $('#m-add').click(function() {
+        $event = $('#m_add_name').val().toString();
+        $description = $('#m_add_description').val().toString();
         
-        //If already clicked, turn off toggle
+        add_event($event,$description,'test');
         
-        //Changes color and indication
-       
+        update_event_list();
+        
     });
     
     //Event List Delete
-    $("#m-delete").click(function() {
+    $('#m-delete').click(function() {
         $('<div>').simpledialog2({
             mode: 'button',
             headerText: 'Warning',
