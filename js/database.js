@@ -22,28 +22,23 @@ function delete_event(event) {
     });
 }
 
-//Select all from Events
-function select_events() {
-    //Open
+function select_events(){ 
+   events("SELECT * FROM EVENTS;", function(get_events) {
+     current_events = get_events;
+     console.log(current_events);
+     //Populate table from here
+   });
+}  
+
+function events(query, callback){
+   var current_events = [];
     var db = openDatabase('flight_instructor_mobile', '1.0', 'Data Storage', 2 * 1024 * 1024);
-    var output = [];
-    //Write
-    db.transaction(function(tx) {
-        //Fetch Data
-        tx.executeSql('SELECT * FROM EVENTS', [], function(tx, results) {
-            for (i = 0; i < results.rows.length; i++) {
-                output[i] = [results.rows.item(i).event,results.rows.item(i).description, results.rows.item(i).parent];
-                //window.alert(output[i]);
-            }
-<<<<<<< HEAD
-<<<<<<< HEAD:database.js
-            return (output);
-=======
-            window.alert(output);
->>>>>>> 390c56fcdf659b3da0ca0cc262b769da14721c5a:js/database.js
-=======
-            window.alert(output);
->>>>>>> 390c56fcdf659b3da0ca0cc262b769da14721c5a
-        }, null);
-    });
-}
+    db.transaction(function (tx) {
+      tx.executeSql(query, [], function(tx, results){
+         for(var i=0; i<results.rows.length; i++) {
+             current_events[i] = [results.rows.item(i).event,results.rows.item(i).description, results.rows.item(i).parent];
+         }
+         callback(current_events);
+      });
+   });
+} 
