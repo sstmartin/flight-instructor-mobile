@@ -8,17 +8,16 @@ $(document).ready(function(){
     function select_events() {
         events("SELECT * FROM EVENTS;", function(get_events) {
             current_events = get_events;
-            //alert(current_events.length);
             
             $('#m_entry_table tbody tr').remove();
             for(var i = 0; i < current_events.length; i++) {
                 
                 $('#m_entry_table tbody').append(
-                        '<tr><td>' + current_events[i][0] + '</td>' +
-                        '<td>' + current_events[i][1] + '</td>' +
+                        '<tr><td>' + current_events[i][4] + '</td>' +
+                        '<td>' + current_events[i][0] + '</td>' +
+                        '<td>' + current_events[i][1] + '</td>' + 
                         '<td>' + current_events[i][2] + '</td>' + 
-                        '<td>' + current_events[i][3] + '</td>' + 
-                        '<td>' + current_events[i][4] + '</td></tr>');
+                        '<td>' + current_events[i][3] + '</td></tr>');
             }
         });
     }
