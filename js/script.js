@@ -33,7 +33,8 @@ $(document).ready(function(){
                         '<td>' + current_events[i][3] + '</td></tr>');
             }
             
-            $('#m_add_parent').val('No Parent');
+            //$('#m_add_parent').val('No Parent');
+			$('#m_add_parent').val('No Parent').change();
         });
     }
     
