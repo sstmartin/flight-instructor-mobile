@@ -32,10 +32,12 @@ $(document).ready(function(){
                         '<td>' + current_events[i][2] + '</td>' + 
                         '<td>' + current_events[i][3] + '</td></tr>');
             }
+            
+            $('#m_add_parent').val('No Parent');
         });
     }
     
-    //When You Click Add
+    //When You Click Add Event
     $('#m-add').click(function() {
         //Grabs values for add table
         stage = $('#m_add_stage').val();
@@ -51,13 +53,12 @@ $(document).ready(function(){
         $('#m_add_task').val('');
         $('#m_add_gnd').prop('checked',false);
         $('#m_add_flight').prop('checked',false);
-        
         select_events();
         
     });
     
     $(':checkbox').click(function() {
-        if($(this).val === 1){
+        if ($(this).val() === '1') {
             $(this).val('0');
         }
         else {
