@@ -9,8 +9,21 @@ $(document).ready(function(){
         events("SELECT * FROM EVENTS;", function(get_events) {
             current_events = get_events;
             
+            //Resets the option dropdown
+            $('#m_add_parent option').remove();
+            $('#m_add_parent').append($('<option></option>')
+                    .text('No Parent'));
+            
+            //Resets the table
             $('#m_entry_table tbody tr').remove();
+            
+            //Repopulates the table and dropbown
             for(var i = 0; i < current_events.length; i++) {
+                
+                if(current_events[i][3] === 'No Parent') {
+                    $('#m_add_parent').append($('<option></option>')
+                            .text(current_events[i][0]));
+                }
                 
                 $('#m_entry_table tbody').append(
                         '<tr><td>' + current_events[i][4] + '</td>' +
@@ -34,7 +47,7 @@ $(document).ready(function(){
         add_event(task,gnd,flight,parent,stage);
         
         //Resets Values to 0 after added
-        $('m_add_stage').val('');
+        $('#m_add_stage').val('');
         $('#m_add_task').val('');
         $('#m_add_gnd').prop('checked',false);
         $('#m_add_flight').prop('checked',false);
