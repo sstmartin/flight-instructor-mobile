@@ -21,14 +21,14 @@ function delete_event(event) {
         tx.executeSql('DELETE FROM EVENTS WHERE task = "' + event + '"');
     });
 }
-
+/*
 function select_events(){ 
    events("SELECT * FROM EVENTS;", function(get_events) {
      current_events = get_events;
      console.log(current_events);
      //Populate table from here
    });
-}  
+}  */
 
 function events(query, callback){
    var current_events = [];

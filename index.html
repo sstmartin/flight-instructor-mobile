@@ -37,6 +37,7 @@
             <table data-role="table" id="m_add_table" data-mode="flow">
                 <thead>
                     <tr>
+                        <th>Stage</th>
                         <th>Task</th>
                         <th>Gnd</th>
                         <th>Flight</th>
@@ -44,11 +45,12 @@
                     </tr>
                     
                     <tr>
+                        <td><input type="text" id="m_add_stage"></td>
                         <td><input type="text" id="m_add_task"></td>
-                        <td><div id="centerme"><input type="checkbox" id="m_add_gnd" value="0"></div></td>
+                        <td><input type="checkbox" id="m_add_gnd" value="0"></td>
                         <td><input type="checkbox" id="m_add_flight" value="0"></td>
                         <td>
-                            <select name="select-choice-1" id="select-choice-1">
+                            <select id="m_add_parent">
                                 <option>No Parent</option>
                             </select>
                         </td>
@@ -62,32 +64,15 @@
             <table data-role="table" id="m_entry_table" data-mode="flow">
                 <thead>
                     <tr>
-                        <th>Event Name</th>
-                        <th>Event Description</th>
+                        <th>Stage</th>
+                        <th>Task</th>
+                        <th>Gnd</th>
+                        <th>Flight</th>
                         <th>Parent Event</th>
-                        <th>Modify</th>
                     </tr>
                 </thead>
                 
                 <tbody>
-                    <tr>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>
-                            <label><input type="checkbox" name="checkbox-0" />Select Event</label>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>
-                            <label><input type="checkbox" name="checkbox-0" />Select Event</label>
-                        </td>
-                    </tr>
-
                 </tbody>
             </table>
 
