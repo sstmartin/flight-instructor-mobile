@@ -30,7 +30,8 @@ $(document).ready(function(){
                         '<td>' + current_events[i][0] + '</td>' +
                         '<td>' + current_events[i][1] + '</td>' + 
                         '<td>' + current_events[i][2] + '</td>' + 
-                        '<td>' + current_events[i][3] + '</td></tr>');
+                        '<td>' + current_events[i][3] + '</td>' + 
+                        '<td><input type="checkbox" id="m_delete" value="0"></td></tr>');
             }
             
             //$('#m_add_parent').val('No Parent');
@@ -80,6 +81,9 @@ $(document).ready(function(){
                 'OK': {
                     click: function() {
                         $('#buttonoutput').text('OK');
+                        $('#m_delete').each(function() {
+                           //if($(this).) 
+                        });
                     }
                 },
                 'Cancel': {
