@@ -1,13 +1,13 @@
 //Add a new event to the EVENTS database
-function add_event(event,gnd,flight,parent) {
+function add_event(event,gnd,flight,parent,stage) {
     //Open
     var db = openDatabase('flight_instructor_mobile', '1.0', 'Data Storage', 2 * 1024 * 1024);
     //Write
     db.transaction(function(tx) {
         //First time condition
-        tx.executeSql('CREATE TABLE IF NOT EXISTS EVENTS (task unique, gnd, flight, parent)');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS EVENTS (task unique, gnd, flight, parent,stage)');
         //Insert data
-        tx.executeSql('INSERT INTO EVENTS (task,gnd,flight,parent) VALUES ("' + event + '", "' + gnd + '", "' + flight + '", "' + parent + '")');
+        tx.executeSql('INSERT INTO EVENTS (task,gnd,flight,parent,stage) VALUES ("' + event + '", "' + gnd + '", "' + flight + '", "' + parent + '", "' + stage + '")');
     });
 }
 
@@ -36,7 +36,7 @@ function events(query, callback){
     db.transaction(function (tx) {
       tx.executeSql(query, [], function(tx, results){
          for(var i=0; i<results.rows.length; i++) {
-             current_events[i] = [results.rows.item(i).task,results.rows.item(i).gnd,results.rows.item(i).flight, results.rows.item(i).parent];
+             current_events[i] = [results.rows.item(i).task,results.rows.item(i).gnd,results.rows.item(i).flight, results.rows.item(i).parent, results.rows.item(i).stage];
          }
          callback(current_events);
       });
