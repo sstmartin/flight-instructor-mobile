@@ -1,6 +1,11 @@
 
 table#m_add_table, table#m_entry_table {
     table-layout: fixed;
+    text-align: center;
+}
+
+.ui-table {
+    text-align: center;
 }
 
 #m_add_name, #m_add_description {
@@ -21,4 +26,15 @@ table#m_add_table, table#m_entry_table {
     text-align: center;
 }
 
+td {
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+}
+
+#centerme {
+    text-align: center;
+}
 

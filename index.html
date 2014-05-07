@@ -37,14 +37,16 @@
             <table data-role="table" id="m_add_table" data-mode="flow">
                 <thead>
                     <tr>
-                        <th>Event Name</th>
-                        <th>Event Description</th>
+                        <th>Task</th>
+                        <th>Gnd</th>
+                        <th>Flight</th>
                         <th>Parent Event</th>
                     </tr>
                     
                     <tr>
-                        <td><input type="text" id="m_add_name"></td>
-                        <td><input type="text" id="m_add_description"></td>
+                        <td><input type="text" id="m_add_task"></td>
+                        <td><div id="centerme"><input type="checkbox" id="m_add_gnd" value="0"></div></td>
+                        <td><input type="checkbox" id="m_add_flight" value="0"></td>
                         <td>
                             <select name="select-choice-1" id="select-choice-1">
                                 <option>No Parent</option>
