@@ -52,7 +52,9 @@ $(document).ready(function(){
         $('#m_add_stage').val('');
         $('#m_add_task').val('');
         $('#m_add_gnd').prop('checked',false);
+        $('#m_add_gnd').val('0');
         $('#m_add_flight').prop('checked',false);
+        $('#m_add_flight').val('0');
         select_events();
         
     });
