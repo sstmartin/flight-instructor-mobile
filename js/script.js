@@ -31,7 +31,7 @@ $(document).ready(function(){
                         '<td>' + current_events[i][1] + '</td>' + 
                         '<td>' + current_events[i][2] + '</td>' + 
                         '<td>' + current_events[i][3] + '</td>' + 
-                        '<td><input type="checkbox" id="m_delete" value="0"></td></tr>');
+                        '<td><input type="checkbox" id="m_delete' + i + '" value="0" onClick= "this.value ^= true" ></td></tr>');
             }
             
             //$('#m_add_parent').val('No Parent');
@@ -95,5 +95,7 @@ $(document).ready(function(){
                 }
             }
         });
+        
+        alert($("#m_delete0").val());
     });
 });
