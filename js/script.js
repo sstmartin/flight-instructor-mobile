@@ -26,7 +26,7 @@ $(document).ready(function(){
                 }
                 
                 $('#m_entry_table tbody').append(
-                        '<tr id="' + current_events[i][0] + '"><td>' + current_events[i][4] + '</td>' +
+                        '<tr><td>' + current_events[i][4] + '</td>' +
                         '<td>' + current_events[i][0] + '</td>' +
                         '<td>' + current_events[i][1] + '</td>' + 
                         '<td>' + current_events[i][2] + '</td>' + 
@@ -62,7 +62,6 @@ $(document).ready(function(){
     });
     
     $(':checkbox').click(function() {
-        alert("BOX CLICKERINOD");
         if ($(this).val() === '1') {
             $(this).val('0');
         }
@@ -83,11 +82,7 @@ $(document).ready(function(){
                     click: function() {
                         $('#buttonoutput').text('OK');
                         $('#m_delete').each(function() {
-                            alert($(this).val());
-                           if($(this).val() === '1') {
-                               var tr = $(this).closest('tr');
-                               alert(tr);
-                           }
+                           //if($(this).) 
                         });
                     }
                 },
