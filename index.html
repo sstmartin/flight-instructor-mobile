@@ -9,8 +9,7 @@
 
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.mobile-1.4.2.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/screen.js"></script>
+        <script src="js/screen_manager.js"></script>
         <script src="js/database.js"></script>
 
         <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" /> 
@@ -24,7 +23,7 @@
                 <ul>
                     <li><a id="n" onclick = "init_screen('n');" data-icon="star" class="ui-btn-active ui-state-persist">New Student Entry</a></li>
                     <li><a id="l" onclick = "init_screen('l');" data-icon="search" >Student Lookup</a></li>	
-                    <li><a id="m" onclick = "init_screen('m');" data-icon="gear" >Modify Event List</a></li>
+                    <li><a id="m" onclick = "init_screen('m');" data-icon="gear" >Task Manager</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- /header -->
@@ -32,49 +31,52 @@
         <div id="m_main">
 
             <br><br>
-            <div id="title">New Event Adder</div>
+            <div id="title">New Task Adder</div>
             
             <table data-role="table" id="m_add_table" data-mode="flow">
                 <thead>
                     <tr>
+			<th>Order</th>
                         <th>Stage</th>
                         <th>Task</th>
                         <th>Gnd</th>
                         <th>Flight</th>
-                        <th>Parent Event</th>
-                    </tr>
-                    
-                    <tr>
-                        <td><input type="text" id="m_add_stage"></td>
-                        <td><input type="text" id="m_add_task"></td>
-                        <td><input type="checkbox" id="m_add_gnd" value="0"></td>
-                        <td><input type="checkbox" id="m_add_flight" value="0"></td>
-                        <td>
-                            <select id="m_add_parent">
-                                <option selected>No Parent</option>
-                            </select>
-                        </td>
+                        <th>Parent task</th>
                     </tr>
                 </thead>
+		<tbody>
+			<td><input type="text" id="m_add_order"></td>
+			<td><input type="text" id="m_add_stage"></td>
+                        <td><input type="text" id="m_add_task"></td>
+                        <td><input type="checkbox" id="m_add_gnd" value="0" onClick= "this.value ^= true"></td>
+                        <td><input type="checkbox" id="m_add_flight" value="0" onClick= "this.value ^= true"></td>
+                        <td>
+                            <select id="m_add_parent">
+                                <option selected>None</option>
+                            </select>
+                        </td>
+                    
+                </tbody>
             </table>
 
             <br><br>
-            <div id="title">Current Events Used</div>
+            <div id="title">Current Task(s)</div>
             
             <table data-role="table" id="m_entry_table" data-mode="flow">
                 <thead>
                     <tr>
+			<th>Order</th>
                         <th>Stage</th>
                         <th>Task</th>
                         <th>Gnd</th>
                         <th>Flight</th>
-                        <th>Parent Event</th>
+                        <th>Parent Task</th>
                         <th>Select</th>
                     </tr>
-                </thead>
-                
+                </thead>                
                 <tbody>
                 </tbody>
+
             </table>
 
         </div>
@@ -83,8 +85,8 @@
         <div id = "n_footer" data-role="footer" data-position="fixed">
             <input type="button" value="Submit" data-icon="check"/>
             <input type="button" value="Reset"  data-icon="back"/>
-            <input type="button" value="Add Event"  data-icon="plus"/>
-            <input type="button" value="Delete Event"  data-icon="minus"/>
+            <input type="button" value="Add Task"  data-icon="plus"/>
+            <input type="button" value="Delete Task"  data-icon="minus"/>
         </div><!-- /n-footer -->
 
         <div id = "l_footer" data-role="footer" data-position="fixed">
@@ -95,8 +97,9 @@
         </div><!-- /l-footer -->
 
         <div id = "m_footer" data-role="footer" data-position="fixed">
-            <input type="button" id="m-add" value="Add Event"  data-icon="plus"/>
-            <input type="button" id="m-delete" value="Delete Event(s)"  data-icon="minus"/>
+            <input type="button" id="m_add" value="Add Task"  data-icon="plus"/>
+            <input type="button" id="m_delete" value="Delete Task(s)"  data-icon="minus"/>
+	<input type="button" id="m_restore" value="Restore Default"  data-icon="back"/>
         </div><!-- /m-footer -->
     </div><!-- /page -->
 
