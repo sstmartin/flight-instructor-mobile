@@ -21,16 +21,60 @@
             <h1> Flight Instructor Mobile </h1>
             <div data-role="navbar" data-theme="e" data-iconpos="top">
                 <ul>
-                    <li><a id="n" onclick = "init_screen('n');" data-icon="star" class="ui-btn-active ui-state-persist">New Student Entry</a></li>
-                    <li><a id="l" onclick = "init_screen('l');" data-icon="search" >Student Lookup</a></li>	
-                    <li><a id="m" onclick = "init_screen('m');" data-icon="gear" >Task Manager</a></li>
+                    <li><a id="n" onClick = "screen('n');" data-icon="star" class="ui-btn-active ui-state-persist">New Student Entry</a></li>
+                    <li><a id="l" onClick = "screen('l');" data-icon="search" >Student Lookup</a></li>	
+                    <li><a id="m" onClick = "screen('m');" data-icon="gear" >Task Manager</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- /header -->
 
-        <div id="m_main">
+	<div id="n_main">
+		<br><br>
+
+            <div id="title">Pilot Information</div>
+            
+            <table data-role="table" id="n_pilot" data-mode="flow">
+                <thead>
+                    <tr>
+			<th>Pilot Name</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+		<tbody>
+			<td><input type="text" id="n_name"></td>
+			<td><div data-role="fieldcontain"><input type="date" id="n_date" value=""/></div></td>
+                    
+                </tbody>
+            </table>
 
             <br><br>
+            <div id="title">Task List</div>
+            
+            <table data-role="table" id="n_form" data-mode="flow">
+                <thead>
+                    <tr>
+			<th>Stage</th>
+                        <th>Task</th>
+                        <th>Gnd</th>
+			<th>Complete</th>
+			<th>Date</th>
+			<th>Flight</th>
+			<th>Complete</th>
+			<th>Date</th>
+			<th>Remarks</th>
+			<th>Select</th>
+                    </tr>
+                </thead>                
+                <tbody>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="m_main">
+            <br>
+
             <div id="title">New Task Adder</div>
             
             <table data-role="table" id="m_add_table" data-mode="flow">
@@ -83,10 +127,8 @@
 
 
         <div id = "n_footer" data-role="footer" data-position="fixed">
-            <input type="button" value="Submit" data-icon="check"/>
-            <input type="button" value="Reset"  data-icon="back"/>
-            <input type="button" value="Add Task"  data-icon="plus"/>
-            <input type="button" value="Delete Task"  data-icon="minus"/>
+            <input type="button" id = "n_submit" value="Submit" onClick = "submit('n')" data-icon="check"/>
+            <input type="button" id = "n_reset" value="Reset" onClick = "reset('n')" data-icon="back"/>
         </div><!-- /n-footer -->
 
         <div id = "l_footer" data-role="footer" data-position="fixed">
@@ -97,13 +139,15 @@
         </div><!-- /l-footer -->
 
         <div id = "m_footer" data-role="footer" data-position="fixed">
-            <input type="button" id="m_add" value="Add Task"  data-icon="plus"/>
+            <input type="button" id="m_add" value="Add Task" onClick = "submit('m')" data-icon="plus"/>
             <input type="button" id="m_delete" value="Delete Task(s)"  data-icon="minus"/>
-	<input type="button" id="m_restore" value="Restore Default"  data-icon="back"/>
+		<input type="button" id = "m_reset" value="Reset" onClick = "reset('m')"  data-icon="back"/>
+	<input type="button" id="m_restore" value="Restore Default Events"  data-icon="alert"/>
         </div><!-- /m-footer -->
     </div><!-- /page -->
 
     <script>
-        init_screen('n');
+        screen('n');
+		drop_table();
     </script>
 </html>
