@@ -103,20 +103,20 @@ function submit(type) {
     case 'n':
         $('.n_select').each(function () {
             if ($(this).val() === '1') {
-		user = $('#n_name').val();
-		order = $(this).attr("id").substring(9).replace( /(:|\.|\[|\])/g, "\\$1" );
-		complete_gnd = $('#n_gnd_' + order).val();
-		date_gnd = $('#n_gnd_date_' + order).val();
-		complete_flight = $('#n_flight_' + order).val();
-		date_flight = $('#n_flight_date_' + order).val();
-		remarks = $('#n_remarks_' + order).val();
-		order= $(this).attr("id").substring(9);
-		if ((date_gnd !== ''|| date_flight !== '') && user !== ''){
-			add_entry(user,order,complete_gnd,date_gnd,complete_flight,date_flight,remarks);
-		}
+                user = $('#n_name').val();
+                order = $(this).attr("id").substring(9).replace(/(:|\.|\[|\])/g, "\\$1");
+                complete_gnd = $('#n_gnd_' + order).val();
+                date_gnd = $('#n_gnd_date_' + order).val();
+                complete_flight = $('#n_flight_' + order).val();
+                date_flight = $('#n_flight_date_' + order).val();
+                remarks = $('#n_remarks_' + order).val();
+                order = $(this).attr("id").substring(9);
+                if ((date_gnd !== '' || date_flight !== '') && user !== '') {
+                    add_entry(user, order, complete_gnd, date_gnd, complete_flight, date_flight, remarks);
+                }
             }
         });
-	reset('n');
+        reset('n');
         break;
     }
     select_tasks();
@@ -157,30 +157,23 @@ function select_tasks() {
                 '<td>' + current_tasks[i][TASK] + '</td>' +
                 '<td>' + current_tasks[i][GND] + '</td>' +
                 '<td><input type="checkbox" id="n_gnd_' + current_tasks[i][ORDER] + '" value="0" onClick= "this.value ^= true" class = "n_gnd"></td>' +
-                '<td><div data-role="fieldcontain"><input type="date" name="name" class = "n_gnd_date" id="n_gnd_date_' + current_tasks[i][ORDER] + '"value=""/></div></td>' +
+                '<td><div data-role="fieldcontain"><input type="date" name="name" class = "n_gnd_date" id="n_gnd_date_' +
+
+                current_tasks[i][ORDER] + '"value=""/></div></td>' +
                 '<td>' + current_tasks[i][FLIGHT] + '</td>' +
                 '<td><input type="checkbox" id="n_flight_' + current_tasks[i][ORDER] + '" value="0" onClick= "this.value ^= true" class = "n_flight"></td>' +
-                '<td><div data-role="fieldcontain"><input type="date" name="name" class = "n_flight_date" id="n_flight_date_' + current_tasks[i][ORDER] + '"value=""/></div></td>' +
+                '<td><div data-role="fieldcontain"><input type="date" name="name" class = "n_flight_date" id="n_flight_date_'
+
+                + current_tasks[i][ORDER] + '"value=""/></div></td>' +
                 '<td><input type="text" class = "n_remarks" id="n_remarks_' + current_tasks[i][ORDER] + '"></td>' +
                 '<td><input type="checkbox" id="n_select_' + current_tasks[i][ORDER] + '" value="0" onClick= "this.value ^= true" class = "n_select"></td></tr>');
         }
     });
 }
-
 $(document).ready(function () {
-    select_tasks();
+	select_tasks();
     $('#m_delete').click(function () {
-        $('<div>').simpledialog2({
-            mode: 'button',
-            headerText: 'Warning',
-            headerClose: true,
-            buttonPrompt: 'Delete task(s)?',
-            buttons: {
-                'OK': {
-                    click: function () {
-                        $('#buttonoutput').text('OK');
-
-                        $('.m_select').each(function () {
+       $('.m_select').each(function () {
                             if ($(this).val() === '1') {
 
                                 delete_task($(this).attr("id").substring(9));
@@ -188,16 +181,5 @@ $(document).ready(function () {
                         });
 
                         select_tasks();
-                    }
-                },
-                'Cancel': {
-                    click: function () {
-                        $('#buttonoutput').text('Cancel');
-                    },
-                    icon: "delete",
-                    theme: "c"
-                }
-            }
-        });
     });
 });

@@ -4,16 +4,12 @@
         <title> Flight Instructor Mobile </title> 
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        <link rel="stylesheet" type "text/css" href="css/jquery.mobile-1.4.2.min.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery-1.9.1.min.js"></script>
         <script src="js/jquery.mobile-1.4.2.js"></script>
         <script src="js/screen_manager.js"></script>
         <script src="js/database.js"></script>
-
-        <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" /> 
-        <script type="text/javascript" src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog2.min.js"></script>
     </head>
 
     <div data-role="page">
@@ -21,9 +17,9 @@
             <h1> Flight Instructor Mobile </h1>
             <div data-role="navbar" data-theme="e" data-iconpos="top">
                 <ul>
-                    <li><a id="n" onClick = "screen('n');" data-icon="star" class="ui-btn-active ui-state-persist">New Student Entry</a></li>
+					<li><a id="m" onClick = "screen('m');" data-icon="gear"class="ui-btn-active ui-state-persist" >Task Manager</a></li>
+                    <li><a id="n" onClick = "screen('n');" data-icon="star">New Student Entry</a></li>
                     <li><a id="l" onClick = "screen('l');" data-icon="search" >Student Lookup</a></li>	
-                    <li><a id="m" onClick = "screen('m');" data-icon="gear" >Task Manager</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- /header -->
@@ -147,7 +143,7 @@
     </div><!-- /page -->
 
     <script>
-        screen('n');
+        screen('m');
 		drop_table();
     </script>
 </html>
